@@ -16,9 +16,19 @@ def decode_ucs2(invite):
         return decoded_data
 
 def encode_ucs2(invite):
-    out_data = unicode(invite).encode("utf-16-be").encode("hex")  # CONVERT STRING TO UCS2
-    print out_data
+    decoded_data = None
+    try:
+        out_data = unicode(invite).encode("utf-16-be").encode("hex")  # CONVERT STRING TO UCS2
+    except:
+        out_data = invite
+        print "couldn't decode: {}".format(out_data)
+    else:
+        decoded_data = out_data
+    finally:
+        return decoded_data
 
 A_out = decode_ucs2(a)
 print A_out
-encode_ucs2(u'سلام')
+
+B_out = encode_ucs2(u'سلام')
+print B_out
