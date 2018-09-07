@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-a = str('"064506270646062F0647002006270639062A062806270631000A00330039003000360033003000200631064A06270644"'\
-	.replace('"', '').decode("hex"))
+ucs2_string = str('"064506270646062F0647002006270639062A062806270631000A00330039003000360033003000200631064A06270644"' \
+                  .replace('"', '').decode("hex"))
 
 def decode_ucs2(invite):
     decoded_data = None
@@ -27,7 +27,7 @@ def encode_ucs2(invite):
     finally:
         return decoded_data
 
-A_out = decode_ucs2(a)
+A_out = decode_ucs2(ucs2_string)
 print A_out
 
 B_out = encode_ucs2(u'سلام')
