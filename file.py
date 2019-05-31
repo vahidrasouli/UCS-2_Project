@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.7
 # -*- coding: UTF-8 -*-
 
 import codecs
@@ -35,7 +35,7 @@ def encode_ucs2(invite):
     decoded_data = None
     try:
         data = codecs.encode(invite, 'utf-16-be')   # CONVERT STRING TO UCS2
-        out_data = codecs.encode(data, 'hex')   # CONVERT UCS2 TO HEX
+        out_data = codecs.encode(data, 'hex')  # CONVERT UCS2 TO HEX
     except:
         out_data = invite
         print("couldn't decode: {}".format(out_data))
